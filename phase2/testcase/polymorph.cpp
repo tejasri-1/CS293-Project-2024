@@ -4,7 +4,7 @@
 #include <string>
 
 struct NNmaker {
-    NNmaker(std::vector<std::vector<int>> &__v) : v(__v) {
+    NNmaker(std::vector<std::vector<int>> __v) : v(__v) {
         cum = v;
         for (int i = 0; i < v.size(); i++) {
             for (int j = 0; j < v[i].size(); j++) {
