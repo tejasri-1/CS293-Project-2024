@@ -32,9 +32,11 @@ int main(void) {
     double total_score = 0.0;
     double score1 = execute_and_verify_testcase("testcases/one");
     double score2 = execute_and_verify_testcase("testcases/two");
+    double score3 = execute_and_verify_testcase("testcases/three");
     std::cout << "Testcase 1: " << score1 << " / 5.0" << std::endl;
     std::cout << "Testcase 2: " << score2 << " / 5.0" << std::endl;
-    total_score += score1 + score2;
-    std::cout << "Total score: " << total_score << " / 10.0" << std::endl;
+    std::cout << "Testcase 3: " << score3 << " / 5.0" << std::endl;
+    total_score += score1 + score2 + score3;
+    std::cout << "Total score: " << total_score << " / 15.0" << std::endl;
     return 0;
 }
