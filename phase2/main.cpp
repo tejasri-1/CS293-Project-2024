@@ -8,15 +8,21 @@
 // You should NOT modify ANYTHING in this file.
 
 void student_t::flag_student(std::shared_ptr<submission_t> __submission) {
-    std::cout << "I was flagged in submisssion " << __submission->id << 
+    int i = 0;
+    while (__submission->codefile[i] != '/') i++;
+    i++;
+    std::cout << "I was flagged in " << __submission->codefile.substr(i) << 
         " and must defend myself in front of Prof. " <<
         __submission->professor->get_name() << "." << std::endl;
 }
 
 void professor_t::flag_professor(std::shared_ptr<submission_t> __submission) {
+    int i = 0;
+    while (__submission->codefile[i] != '/') i++;
+    i++;
     std::cout << "Student " << __submission->student->get_name() << 
-        " has plagiarized in submission " << __submission->id << " and will be "
-        << "receiving an FR grade." << std::endl << std::endl;
+        " has plagiarized in " << __submission->codefile.substr(i) << 
+        " and will be receiving an FR grade." << std::endl << std::endl;
 }
 
 namespace testcase {

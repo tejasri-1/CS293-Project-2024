@@ -11,11 +11,13 @@ double execute_and_verify_testcase(std::string test_dir) {
     std::vector<int> submission1 = file_one.get_tokens();
     std::vector<int> submission2 = file_two.get_tokens();
     std::array<int, 5> output = match_submissions(submission1, submission2);
+
     std::ifstream in(test_dir + "/expected.txt");
     std::array<int, 5> expected;
     in >> expected[0] >> expected[1] >> expected[2] >> 
             expected[3] >> expected[4];
     in.close();
+
     std::array<double, 5> results;
     results[0] = (output[0] == expected[0]) ? 1.0 : 0.0;
     results[1] = (1.0 * std::min(output[1], expected[1])) / 
